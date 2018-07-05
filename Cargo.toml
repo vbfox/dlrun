@@ -1,0 +1,28 @@
+[package]
+name = "dlrun"
+version = "0.0.1"
+authors = ["Julien Roncaglia <julien@roncaglia.fr>"]
+license = "MIT"
+keywords = ["windows", "docker", "download", "cli"]
+categories = ["command-line-utilities", "os::windows-apis"]
+homepage = "https://github.com/vbfox/dlrun"
+repository = "https://github.com/vbfox/dlrun"
+description = """
+Download & run installers for container creation
+"""
+readme = "README.md"
+
+[dependencies]
+error-chain = "0.12.0"
+clap = "2.32.0"
+winapi = "0.3.5"
+
+[profile.release]
+lto = true
+panic = 'abort'
+opt-level = 'z'
+
+[[bin]]
+name = "dlrun"
+test = false
+doc = false
